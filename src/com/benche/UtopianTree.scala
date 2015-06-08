@@ -16,13 +16,8 @@ object Solution {
             println(finalHeight)
             
             def logic(j: Int) : Int = {
-                if(j == 0) 
-                   1
-                else if((j & 1) == 0) 
-                  1 + logic(j - 1)
-                else 
-                  2 * logic(j - 1)                   
-            }   
+                ~(~1<<(j>>1)) << j%2 
+            }
         }
     }
 }
